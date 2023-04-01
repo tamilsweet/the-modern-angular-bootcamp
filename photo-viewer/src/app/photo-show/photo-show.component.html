@@ -1,0 +1,11 @@
+<div class="ui container center aligned">
+  <h1 class="ui header center primary">Random Photo Viewer</h1>
+  <div class="ui segment">
+    <button class="ui primary basic button" *ngIf="!loading" (click)="loadPhoto()">Refresh Photo</button>
+    <button class="ui icon primary basic button" *ngIf="loading">
+      <i class="spinner loading icon"></i>
+      Loading...
+    </button>
+    <img class="ui image centered rounded big" *ngIf="photoUrl" [src]="photoUrl" alt="Random Photo" />
+  </div>
+</div>
