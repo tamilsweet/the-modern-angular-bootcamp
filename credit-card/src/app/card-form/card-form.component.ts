@@ -31,4 +31,7 @@ export class CardFormComponent {
     ])
   });
 
+  onSubmit() {
+    console.log('Handle form submission here..');
+  }
 }

@@ -1,7 +1,7 @@
 <div class="ui two column grid">
 
   <div class="column">
-    <form class="ui form" [ngClass]="{ 'error': cardForm.invalid }" [formGroup]="cardForm">
+    <form class="ui form" [ngClass]="{ 'error': cardForm.invalid }" [formGroup]="cardForm" (ngSubmit)="onSubmit()">
       <app-input class="field" label="Name" [control]="cardForm.controls.name"></app-input>
       <app-input class="field" label="Card Number" [control]="cardForm.controls.cardNumber"></app-input>
       <div class="two fields">
@@ -10,8 +10,8 @@
       </div>
 
       <div class="field"></div>
-      <button class="ui button positive" type="submit">Submit</button>
-      <button class="ui button" type="button" (click)="cardForm.reset()">Reset</button>
+      <button class="ui button positive" [disabled]="cardForm.invalid" type="submit">Submit</button>
+      <button class="ui button warning" type="button" (click)="cardForm.reset()">Reset</button>
     </form>
   </div>
 
