@@ -1,12 +1,22 @@
-<form #emailForm="ngForm" (ngSubmit)="onSubmit()">
-  <input type="email" name="email" [(ngModel)]="email" required pattern=".+@.+\..+" #emailControl="ngModel">
-  <div *ngIf="emailControl.invalid && emailControl.touched">
-    <div *ngIf="emailControl.errors?.['required']">
-      Email is required
-    </div>
-    <div *ngIf="emailControl.errors?.['pattern']">
-      Please enter valid Email ID
-    </div>
+<div class="ui container">
+  <div class="ui header centered">
+    <h1>Angular Template Form</h1>
   </div>
-  <button type="submit" [disabled]="emailForm.invalid">Submit</button>
-</form>
+  <form class="ui form" #emailForm="ngForm" (ngSubmit)="onSubmit()"
+    [ngClass]="{ error: emailForm.invalid && emailForm.touched && !emailForm.pristine }">
+    <div class="field" [ngClass]="{ success: emailControl.valid }">
+      <label>Email</label>
+      <input type="email" name="email" [(ngModel)]="email" required pattern=".+@.+\..+" #emailControl="ngModel"
+        placeholder="Email Address" />
+      <ng-container *ngIf="emailControl.invalid && emailControl.touched">
+        <div class="ui error message" *ngIf="emailControl.errors?.['required']">
+          Email is required
+        </div>
+        <div class="ui error message" *ngIf="emailControl.errors?.['pattern']">
+          Please enter valid Email ID
+        </div>
+      </ng-container>
+    </div>
+    <button class="ui button primary" type="submit" [disabled]="emailForm.invalid">Submit</button>
+  </form>
+</div>
