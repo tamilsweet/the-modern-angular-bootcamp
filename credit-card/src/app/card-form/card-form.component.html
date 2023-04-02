@@ -1,0 +1,9 @@
+<form [formGroup]="cardForm">
+  <app-input label="Name" [control]="cardForm.controls.name"></app-input>
+</form>
+
+<div>
+  <p>Form Content {{ cardForm.value | json }}</p>
+  <p>Form valid: {{ cardForm.valid }}</p>
+  <p>Errors in name control: {{ cardForm.controls.name.errors | json }} </p>
+</div>
