@@ -16,3 +16,9 @@ Uses Fomantic UI for styling.
 
 This is a credit card app that shows form to enter credit card details and display the card in SVG.
 Uses Angular Reactive Forms.
+
+
+## Email Subscription App
+
+This is an email subscription app that shows form to enter email and submits it.
+Uses Angular Template Driven Forms.
