@@ -1,9 +1,24 @@
-<form [formGroup]="cardForm">
-  <app-input label="Name" [control]="cardForm.controls.name"></app-input>
-</form>
+<div class="ui two column grid">
 
-<div>
-  <p>Form Content {{ cardForm.value | json }}</p>
-  <p>Form valid: {{ cardForm.valid }}</p>
-  <p>Errors in name control: {{ cardForm.controls.name.errors | json }} </p>
+  <div class="column">
+    <form class="ui form" [ngClass]="{ 'error': cardForm.invalid }" [formGroup]="cardForm">
+      <app-input class="field" label="Name" [control]="cardForm.controls.name"></app-input>
+      <app-input class="field" label="Card Number" [control]="cardForm.controls.cardNumber"></app-input>
+      <div class="two fields">
+        <app-input class="field" label="Expiration" [control]="cardForm.controls.expiration"></app-input>
+        <app-input class="field" label="Security Code" [control]="cardForm.controls.securityCode"></app-input>
+      </div>
+
+      <div class="field"></div>
+      <button class="ui button positive" type="submit">Submit</button>
+      <button class="ui button" type="button" (click)="cardForm.reset()">Reset</button>
+    </form>
+  </div>
+
+  <div class="column">
+    <app-card [cardNumber]="cardForm.controls.cardNumber.value || ''" [name]="cardForm.controls.name.value || ''"
+      [expiration]="cardForm.controls.expiration.value || ''">
+    </app-card>
+  </div>
+
 </div>
