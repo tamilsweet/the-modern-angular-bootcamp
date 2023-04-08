@@ -22,3 +22,15 @@ Uses Angular Reactive Forms.
 
 This is an email subscription app that shows form to enter email and submits it.
 Uses Angular Template Driven Forms.
+
+
+## Maps App
+
+This is a maps app that shows a map and allows to add markers.
+Learn how to re-use code using Interface and Type in TypeScript.
+Uses Google Maps API.
+
+## Sort Application
+
+Typescript implementation of Bubble Sort to sort different types of data.
+Learn code re-use using Interfaces in TypeScript.
