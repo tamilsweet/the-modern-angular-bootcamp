@@ -1,7 +1,9 @@
-import { Sortable } from "./Sorter";
+import { Sortable, Sorter } from "./Sorter";
 
-export class CharactersCollection implements Sortable {
-  constructor(public data: string) { }
+export class CharactersCollection extends Sorter implements Sortable {
+  constructor(public data: string) {
+    super();
+  }
 
   get length(): number {
     return this.data.length;
@@ -13,7 +15,7 @@ export class CharactersCollection implements Sortable {
 
   swap(leftIndex: number, rightIndex: number): void {
     const characters = this.data.split('');
-    
+
     const leftHand = characters[leftIndex];
     characters[leftIndex] = characters[rightIndex];
     characters[rightIndex] = leftHand;
