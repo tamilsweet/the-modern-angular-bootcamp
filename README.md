@@ -34,3 +34,10 @@ Uses Google Maps API.
 
 Typescript implementation of Bubble Sort to sort different types of data.
 Learn code re-use using Interfaces in TypeScript.
+
+
+## Math Game
+
+This is a fast-paced math game that shows two numbers and allows to enter the sum.
+Shows average time to solve the problem.
+Uses Reactive Forms Module and RxJS operators.
