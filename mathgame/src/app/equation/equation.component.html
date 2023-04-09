@@ -1,0 +1,5 @@
+<form [formGroup]="mathForm" (ngSubmit)="checkAnswer()">
+  <div class="equation"> {{ numA }} + {{ numB }} = </div>
+  <input appAnswerHighlight type="text" formControlName="answer" />
+</form>
+<h3 class="stats">{{ secondsPerSolution | number: '1.1-3' }} seconds per solution</h3>
